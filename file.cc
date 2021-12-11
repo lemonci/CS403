@@ -41,9 +41,12 @@ size_t str_tokenize(char* str, char** tokens, const size_t n) {
   return tok_size;
 }
 
-char typeDic[][] = {
-	{"0", "int"}, {"1", "char"}, {"2", "double"}, {"3", "if"}, {"4", "else"}, {"5", "while"}, {"6", "real"}, {"7", "true"}, {"8", "false"}
+char typeDic[21][10] = {"char", "int", "double", "real",
+	"true", "false", "while", "if", "else", 
+	"(", ")", "+", "-", "*", "/",
+	"==", "!=", ">", "<", ">=", "<="
 };
+
 
  struct token gettoken() {
 	struct token temp_token;
