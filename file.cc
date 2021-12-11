@@ -53,7 +53,7 @@ char typeDic[25][10] = {
 	struct token temp_token;
 	int cat;
 	temp_token.per_info = toks[tok_pos];
-	temp_token.type = ?;
+	
 	tok_pos ++;
 	for (j=0;j<=25,j++){
 		if (strcmp(toks[i],typeDic[j])==0){
@@ -61,7 +61,8 @@ char typeDic[25][10] = {
 			break;
 		}
 	}
-}
+	temp_token.type = typeDic[cat];
+	
 	return temp_token;
 }
 
