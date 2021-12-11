@@ -41,20 +41,27 @@ size_t str_tokenize(char* str, char** tokens, const size_t n) {
   return tok_size;
 }
 
-char typeDic[25][10] = {"char", "int", "double", "real", "num", "id",
+char typeDic[25][10] = {
+	"char", "int", "double", "real", "num", "id",
 	"bool", "true", "false", "while", "if", "else", 
 	"(", ")", "+", "-", "*", "/",
 	"==", "!=", ">", "<", ">=", "<=",
 	"--", "!", "||", "&&"
-};
-
+}
 
  struct token gettoken() {
 	struct token temp_token;
+	int cat;
 	temp_token.per_info = toks[tok_pos];
 	temp_token.type = ?;
 	tok_pos ++;
-	
+	for (j=0;j<=25,j++){
+		if (strcmp(toks[i],typeDic[j])==0){
+			cat = j;
+			break;
+		}
+	}
+}
 	return temp_token;
 }
 
