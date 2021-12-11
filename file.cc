@@ -42,10 +42,10 @@ size_t str_tokenize(char* str, char** tokens, const size_t n) {
 }
 
 char typeDic[25][10] = {"char", "int", "double", "real", "num", "id",
-	"true", "false", "while", "if", "else", 
+	"bool", "true", "false", "while", "if", "else", 
 	"(", ")", "+", "-", "*", "/",
 	"==", "!=", ">", "<", ">=", "<=",
-	"--", "!"
+	"--", "!", "||", "&&"
 };
 
 
