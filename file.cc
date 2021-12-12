@@ -77,11 +77,16 @@ int type_detection(int position) {
 		}
 	}
 	int i;
+	int count_p = 0;
+	int count_n = 0;
+	int count_c = 0;
 	for (i=0; i < strlen(toks[position]); i++) {
 		if ((65<= toks[position][i] && toks[position][i]<= 90)
 		    || toks[position][i]=95
-		    || (97<=toks[position][i] && toks[position][i] <= 122)) return 2;
-		
+		    || (97<=toks[position][i] && toks[position][i] <= 122)) count_c++;
+		if (toks[position][i] == '.') count_p ++;
+		if (30<=toks[position][i] && toks[position][i]<=39) count_n++;
+		}
 	}
 }
 
