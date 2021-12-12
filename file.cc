@@ -72,11 +72,9 @@ int type_detection(int position) {
 	}
 	for (cat=0;cat < 25;cat++){
 		if (strcmp(toks[position],typeDic[cat])==0){
-			break;
+			return cat;
 		}
-
 	}
-	return cat;
 }
 
 
