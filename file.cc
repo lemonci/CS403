@@ -51,7 +51,6 @@ char typeDic[25][10] = {
 
  struct token gettoken() {
 	struct token temp_token;
-	int cat;
 	temp_token.per_info = toks[tok_pos];
 	
 	tok_pos ++;
@@ -63,13 +62,14 @@ char typeDic[25][10] = {
 
 int type_detection(int position) {
 	toks[position];
+	int cat;
 	for (j=0;j<=25;j++){
 		if (strcmp(toks[position],typeDic[j])==0){
 			cat = j;
 			break;
 		}
 	}
-	return type_id;
+	return cat;
 }
 
 
