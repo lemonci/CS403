@@ -64,7 +64,7 @@ int type_detection(int position) {
 	toks[position];
 	int cat;
 	if (strcmp(toks[position],"-")==0) {
-		cat  = minustest;
+		if ( type_detection(toks[position])  < 3) cat = 15; else cat = 24;
 		return cat;
 	}
 	for (cat=0;cat<=25;cat++){
