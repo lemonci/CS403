@@ -75,6 +75,11 @@ int type_detection(int position) {
 			return cat;
 		}
 	}
+	int i;
+	for (i=0; i < strlen(toks[position]); i++) {
+		if (toks[position][i]) == '.' return 0
+		
+	}
 }
 
 
