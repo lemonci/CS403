@@ -77,7 +77,9 @@ int type_detection(int position) {
 	}
 	int i;
 	for (i=0; i < strlen(toks[position]); i++) {
-		if ( 65<= toks[position][i] <= 90 OR toks[position][i]=95 OR 97<=toks[position][i] <= 122) return 2;
+		if ((65<= toks[position][i] && toks[position][i]<= 90)
+		    || toks[position][i]=95
+		    || (97<=toks[position][i] && toks[position][i] <= 122)) return 2;
 		
 	}
 }
