@@ -64,16 +64,17 @@ int type_detection(int position) {
 	toks[position];
 	int cat;
 	if (strcmp(toks[position],"-")==0) {
-		if ( type_detection(toks[position])  < 3){
+		if ( type_detection(toks[position-1])<3){
 			cat = 15;
 		}
 		else cat = 24;
 		return cat;
 	}
-	for (cat=0;cat<=25;cat++){
+	for (cat=0;cat < 25;cat++){
 		if (strcmp(toks[position],typeDic[cat])==0){
 			break;
 		}
+
 	}
 	return cat;
 }
