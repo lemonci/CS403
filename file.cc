@@ -63,6 +63,10 @@ char typeDic[25][10] = {
 int type_detection(int position) {
 	toks[position];
 	int cat;
+	if (strcmp(toks[position],"-")==0) {
+		cat  = minustest;
+		return cat;
+	}
 	for (cat=0;cat<=25;cat++){
 		if (strcmp(toks[position],typeDic[cat])==0){
 			break;
