@@ -10,7 +10,7 @@
 #endif /* __TOKENIZE_H */
 
 size_t str_tokenize(char*, char**, const size_t);
-char toks[2000];
+char toks[2000][255];
 int tok_pos = 0;
 
 struct token{
@@ -64,6 +64,12 @@ char typeDic[25][10] = {
 	temp_token.type = typeDic[cat];
 	
 	return temp_token;
+}
+
+int type_detection(int position) {
+	toks[position];
+	
+	return type_id;
 }
 
 
