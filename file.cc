@@ -71,7 +71,7 @@ int type_detection(int position) {
 		else cat = 24;
 		return cat;
 	}
-	for (cat=0;cat < 25;cat++){
+	for (cat=0;cat < 26;cat++){
 		if (strcmp(toks[position],typeDic[cat])==0){
 			return cat;
 		}
@@ -80,14 +80,22 @@ int type_detection(int position) {
 	int count_p = 0;
 	int count_n = 0;
 	int count_c = 0;
+	int tok_len = strlen(toks[position]);
 	for (i=0; i < strlen(toks[position]); i++) {
 		if ((65<= toks[position][i] && toks[position][i]<= 90)
 		    || toks[position][i]=95
 		    || (97<=toks[position][i] && toks[position][i] <= 122)) count_c++;
-		if (toks[position][i] == '.') count_p ++;
+		if (toks[position][i] == '.') count_p++;
 		if (48<=toks[position][i] && toks[position][i]<=57) count_n++;
-		}
 	}
+	if (count_n == tok_len) return 1;
+	else{
+		if (count_p == 1 && (count_p + count_n == tok_len)) return 0;
+	    	else{
+			if(count_p + count_n + count_c == tok_len) return 2;
+			else return 27;
+		}
+	    }
 }
 
 
