@@ -41,12 +41,12 @@ size_t str_tokenize(char* str, char** tokens, const size_t n) {
   return tok_size;
 }
 
-char typeDic[25][10] = {
+char typeDic[][10] = {
 	"real", "num", "id", "char", "int", "double",
 	"bool", "true", "false", "while", "if", "else", 
 	"(", ")", "+", "-", "*", "/",
 	"==", "!=", ">", "<", ">=", "<=",
-	"--", "!", "||", "&&"
+	"--", "!", "||", "&&",
 	"error"
 }
 
