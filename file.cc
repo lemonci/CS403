@@ -55,12 +55,7 @@ char typeDic[25][10] = {
 	temp_token.per_info = toks[tok_pos];
 	
 	tok_pos ++;
-	for (j=0;j<=25,j++){
-		if (strcmp(toks[i],typeDic[j])==0){
-			cat = j;
-			break;
-		}
-	}
+
 	temp_token.type = typeDic[cat];
 	
 	return temp_token;
@@ -68,7 +63,12 @@ char typeDic[25][10] = {
 
 int type_detection(int position) {
 	toks[position];
-	
+	for (j=0;j<=25;j++){
+		if (strcmp(toks[position],typeDic[j])==0){
+			cat = j;
+			break;
+		}
+	}
 	return type_id;
 }
 
