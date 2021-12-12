@@ -53,8 +53,8 @@ char typeDic[][10] = {
  struct token gettoken() {
 	struct token temp_token;
 	temp_token.per_info = toks[tok_pos];
-	tok_pos ++;
 	temp_token.type = type_detection(tok_pos);
+	tok_pos ++;
 	return temp_token;
 }
 
