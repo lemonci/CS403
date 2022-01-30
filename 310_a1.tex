@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\sloppy
+\usepackage{fullpage,palatino,amssymb,amsmath,amsfonts}
+\usepackage{hyperref}
+
+\usepackage{bbm}
+\usepackage{mathpple}
+
+\renewcommand{\ttdefault}{cmtt}
+\SetMathAlphabet\mathtt{normal}{OT1}{cmtt}{m}{n}
+
+\begin{document}
+
+\title{CS~310, Assignment 1} 
+ \author{Monica Li}
+% \date{}
+ \maketitle
+
+\begin{enumerate}
+
+\item Let $\Sigma = \{0, 1\}$ and consider the languages
+  $A = \{10, 00, 0\}$ and $B = \{01, 11, 1\}$.
+  \begin{enumerate}
+  \item Write down all strings in $\Sigma^{*}$ that have length at
+    most two. \\
+    $\epsilon, 0, 1, 00, 01, 10, 11$
+  \item How many strings are in $A \cdot B$?  Write down all of them.\\
+  There are 8 strings in $A \cdot B$: $1001, 1011, 101, 0001, 0011, 001, 011, 01$
+  \item How many strings are in $B \cdot A$?  Write down all of them. \\
+  There are 8 strings in $B \cdot A$: $0110, 0100, 010, 1110, 1100, 110, 100, 10$
+  \end{enumerate}
+\item Let $R = (ba^{*}b + aba^{*}ba)^{*}$ and
+  $S = (a^{*}ba^{*}ba^{*})^{*}$, both over $\Sigma=\{a,b\}$.
+  \begin{enumerate}
+  \item Give an example of a string $z$ that is both in $R$ and in $S$
+    (that is, $z \in R \cap S$ ). \\
+    $bb$
+  \item Is it possible to find a string $x$ that is in $R$ and is not
+    in $S$ (that is, $x \in R \cap \overline{S}$)?  If yes, write it
+    down; if not explain briefly why. \\
+    No, because $R = (ba^{*}b + aba^{*}ba)^{*} = (ba^{*}b)^{*} + (aba^{*}ba)^{*} $\\
+    Both $(ba^{*}b)^{*}$ and $(aba^{*}ba)^{*} \subset S$, so $R \subset S $. Therefore $R \cap \overline{S} = \O$
+  \item Is it possible to find a string $y$ that is in $S$ and is not
+    in $R$ (that is, $y \in S \cap \overline{R}$)?  If yes, write it
+    down; if not explain briefly why. \\
+    $y = baba$ 
+  \end{enumerate}
+\item Show how to define the following languages over
+  $\Sigma = \{0, 1\}$ using only $\varepsilon$, the alphabet symbols
+  $0$ and $1$, and the operations of union, concatenation, and
+  closure.
+
+  \begin{enumerate}
+  \item All strings that begin with $11$ \emph{and} end with $10$. \\
+  $11(0+1)^{*}10$
+  \item All strings that have both $10$ and $01$ as substrings. Note
+    that the substrings can occur in either order and possibly
+    overlap. \\
+    $((0+1)^{*}101(0+1)^{*})+((0+1)^{*}010(0+1)^{*})+((0+1)^{*}10(0+1)^{*}01(0+1)^{*})+((0+1)^{*}01(0+1)^{*}10(0+1)^{*})$
+  \end{enumerate}
+
+\item Describe the language $L$ defined by each of the following
+  equations.  Explain briefly.
+
+  \begin{enumerate}
+  \item $L = 1 + L0 + 0L$ \\
+  $1$ is an element of $L$; for any $l \in L$, $l0$ and $0l$ are also in $L$; these are the only elements of $L$. So $L = \{ 0^{i}10^{j}, i \geq 0, j \geq 0 \}$
+  \item $L = L + L$ \\
+  $L_{0} = \O, L_1 = L_{0} + L_{0} = \O + \O = \O, ..., L_{j+1} = L_j + L_j = \O$\\
+  $L = \O$
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
